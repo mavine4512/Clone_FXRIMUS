@@ -1,0 +1,108 @@
+.parentContainer{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    /* height: 100% !important; */
+    background-color:#F3F8FF;
+}
+.headContainer{
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 6em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.logoImg{
+    width: 15%;
+}
+.divider{
+ margin-left: 10px;
+ margin-right: 10px;
+}
+.headerbtnContainer{
+ display: flex;
+ align-items: center; 
+ justify-content: space-between; 
+ width: 240px;  
+ padding: 10px;
+}
+.enIcon{
+    display: flex;
+    justify-content: space-between;
+    width: 45px;
+    margin-right: 5px;
+}
+.OpenIcon{
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #00e69c;
+    border-bottom-right-radius: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+    color: black;
+    cursor:pointer;
+    position: relative;
+
+    line-height: 1;
+    line-height: 1;
+    white-space: pre-line;
+    word-break: break-all;
+    background-position: 40% 50%;
+    transition: all 0.2s linear 0s;
+    background-size: 200% 100%;
+    position: relative;
+    
+}
+.OpenIcontext{
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.rightIcon{
+    font-weight: 700;
+    font-size: 14px;
+}
+.OpenIcon:hover {
+    border: 2px solid #00e69c;
+    background-color: #F3F8FF;
+    color: #00e69c;
+}
+.OpenIcon::before {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    transition: all 0.4s linear 0s;
+    background: #00e69c;
+    left: 0;
+    top: 0;
+}
+.OpenIcon::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    transition: all 0.4s linear 0s;
+    background: #00e69c;
+    left: 0;
+    bottom: 0;
+    max-width: calc(100% - 22px);
+}
+
+.OpenIcon:hover::before {
+    width: 100%;
+}
+@keyframes moveMotion {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
