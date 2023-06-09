@@ -66,7 +66,7 @@
 }
 .OpenIcon:hover {
     border: 2px solid #00e69c;
-    background-color: #F3F8FF;
+    background-color: #FFFF;
     color: #00e69c;
 }
 .OpenIcon::before {
@@ -103,25 +103,47 @@
         width: 100%;
     }
 }
+
+.headerTital{
+    font-weight: bold;
+    font-size: 26px;
+    text-transform: uppercase;
+    color:black,
+    
+}
 .loginContainerFrom{
     margin-top: 20px;
 }
-.loginFrom{
-  
+.loginContainer{
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+}
+.formContainer{
+    max-width: 400px !important;
+    margin: 0 auto;
+}
+.form-group{
+    height: 70px;
+}
+.textbtn{
+    margin-left: 35%;
+    font-size: larger;
+    font-weight: bold;
 }
 .Loginbtn{
-    width: 150px;
+    width: 405px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #00e69c;
+    border-color: #00e69c;
     border-bottom-right-radius: 20px;
     padding-left: 20px;
     padding-right: 10px;
-    color: black;
     cursor: pointer;
-    position: relative;
     line-height: 1;
     line-height: 1;
     white-space: pre-line;
@@ -130,4 +152,43 @@
     transition: all 0.2s linear 0s;
     background-size: 200% 100%;
     position: relative;
+}
+.Loginbtn:hover {
+    border: 2px solid #00e69c;
+    background-color: #FFFF;
+    color: #00e69c;
+}
+
+.Loginbtn::before {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    transition: all 0.4s linear 0s;
+    background: #00e69c;
+    left: 0;
+    top: 0;
+}
+
+.Loginbtn::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    transition: all 0.4s linear 0s;
+    background: #00e69c;
+    left: 0;
+    bottom: 0;
+    max-width: calc(100% - 22px);
+}
+.forgetPassword{
+    display: block;
+    justify-content:flex-start ;
+    text-align: left;
+    max-width: 400px !important;
+    margin: auto;
+    margin-top: 3%;
+}
+.btnContainer{
+    margin-top: 20px;
 }

@@ -1,35 +1,41 @@
 import React, { useState } from "react";
 import { AiOutlineRight, AiOutlineDown } from "react-icons/ai";
+import TextField from "@mui/material/TextField";
+import LoginForm from "../../components/loginForm";
+import Input from "@mui/material/Input";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import FormControl from "@mui/material/FormControl";
+import InputAdornment from "@mui/material/InputAdornment";
+import InputLabel from "@mui/material/InputLabel";
+import IconButton from "@mui/material/IconButton";
 import "./style.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(" ");
 
-  const adminUser = {
-    email: "admin@admin.com",
-    password: "admin123",
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
   };
 
   const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+    // setUser(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
+    // setPassword(event.target.value);
+  };
+  const handleSubmit = () => {
+    console.log("username");
+    console.log("password");
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    // Perform login logic here
-    console.log("Username:", username);
-    console.log("Password:", password);
-
-    // Reset the form
-    setUsername("");
-    setPassword("");
-  };
   return (
     <div className="parentContainer">
       <div className="headContainer">
@@ -57,37 +63,51 @@ const Login = () => {
       <hr className="divider" />
       <div className="loginContainer">
         <div className="loginContainerFrom">
-          <h1>Log in to client area</h1>
-          <div className="loginFrom">
-            <form onSubmit={handleSubmit}>
+          <h1 className="headerTital">Log in to client area</h1>
+          <div className="formContainer">
+            <form onSubmit={handleSubmit} className="formItems">
               <div className="form-group">
-                <label htmlFor="username">Username</label>
-                <input
-                  type="text"
-                  id="username"
-                  value={username}
-                  onChange={handleUsernameChange}
-                  required
+                <TextField
+                  username
+                  id="standard-error-helper-text"
+                  label="Username*"
+                  helperText="This is a requried field."
+                  variant="standard"
+                  sx={{ m: 1, width: "45ch" }}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  value={password}
-                  onChange={handlePasswordChange}
-                  required
-                />
+                <FormControl sx={{ m: 1, width: "45ch" }} variant="standard">
+                  <InputLabel htmlFor="standard-adornment-password">
+                    Password*
+                  </InputLabel>
+                  <Input
+                    id="standard-adornment-password"
+                    type={showPassword ? "text" : "password"}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                  />
+                </FormControl>
               </div>
-              <button type="submit" className="Loginbtn">
-                Log in <AiOutlineRight className="rightIcon" />
-              </button>
+              <div className="btnContainer">
+                <button type="submit" className="Loginbtn">
+                  <span className="textbtn"> Log in </span>
+                  <AiOutlineRight className="rightIcon" />
+                </button>
+              </div>
             </form>
           </div>
-
-          <div>
+          <div className="forgetPassword">
             <p>Forgot Your Password?</p>
             <p>Don't Have an account? Sing Up with FXPRIMUS now!</p>
           </div>
